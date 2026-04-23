@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm i *)",
+      "Bash(npx uipro *)",
+      "Bash(npm install *)",
+      "Bash(npm run *)"
+    ]
+  }
+}
