@@ -4,12 +4,12 @@ import { SiGithub, SiX, SiInstagram } from 'react-icons/si'
 import { FaLinkedin } from 'react-icons/fa'
 import { HiEnvelope, HiPhone, HiMapPin } from 'react-icons/hi2'
 
-const socials = [
-  { icon: SiGithub,   href: 'https://github.com/muneeb-464',    label: 'GitHub'    },
-  { icon: FaLinkedin, href: 'https://linkedin.com/in/munib-sajjad',label: 'LinkedIn'  },
-  { icon: SiX,        href: 'https://x.com/munib-sajjad',         label: 'X'         },
-  { icon: SiInstagram,href: 'https://instagram.com/munib-sajjad', label: 'Instagram' },
-]
+// const socials = [
+//   { icon: SiGithub,   href: 'https://github.com/muneeb-464',    label: 'GitHub'    },
+//   { icon: FaLinkedin, href: 'https://linkedin.com/in/munib-sajjad',label: 'LinkedIn'  },
+//   { icon: SiX,        href: 'https://x.com/munib-sajjad',         label: 'X'         },
+//   { icon: SiInstagram,href: 'https://instagram.com/munib-sajjad', label: 'Instagram' },
+// ]
 
 const directContact = [
   { icon: HiEnvelope, label: 'Email',    value: 'munib.sajjad464@gmail.com', href: 'mailto:munib.sajjad464@gmail.com' },
@@ -129,7 +129,7 @@ export default function Contact() {
               ))}
             </div>
 
-            <h3 className="text-base font-bold mb-4 text-ink">Social Presence</h3>
+            {/* <h3 className="text-base font-bold mb-4 text-ink">Social Presence</h3>
             <div className="flex gap-3">
                {socials.map(({ icon: Icon, href }) => (
                 <a
@@ -139,7 +139,7 @@ export default function Contact() {
                   <span className="relative z-10"><Icon /></span>
                 </a>
               ))}
-            </div>
+            </div> */}
           </motion.div>
 
         </div>
