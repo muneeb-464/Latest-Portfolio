@@ -33,7 +33,7 @@ export const projects = [
     image: project6,
     accent: '#E63946',
     live: 'https://displineos-v1.vercel.app/',
-    github: '#',
+    github: 'https://github.com/muneeb-464/Displineos-V1',
   },
   {
     title: 'Travel & Chalet Booking',
