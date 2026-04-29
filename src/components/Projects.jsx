@@ -32,7 +32,7 @@ export const projects = [
     tags: ['React', 'TypeScript', 'Node.js', 'TailwindCSS', 'MongoDB'],
     image: project6,
     accent: '#E63946',
-    live: 'https://shinespanproject.netlify.app/',
+    live: 'https://displineos-v1.vercel.app/',
     github: '#',
   },
   {
