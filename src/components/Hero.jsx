@@ -12,9 +12,9 @@ const socials = [
 
 const codeLines = [
   { tokens: [{ t: 'const ', c: '#C084FC' }, { t: 'developer', c: '#E3E2E2' }, { t: ' = {', c: '#E3E2E2' }] },
-  // { tokens: [{ t: '  name', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"Munib Sajjad"', c: '#86EFAC' }, { t: ',', c: '#E3E2E2' }] },
+  { tokens: [{ t: '  name', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"Munib Sajjad"', c: '#86EFAC' }, { t: ',', c: '#E3E2E2' }] },
   { tokens: [{ t: '  focus', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"Full-Stack Developer (MERN Stack Specialist)"', c: '#86EFAC' }, { t: ',', c: '#E3E2E2' }] },
-  { tokens: [{ t: '  focus', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"FullStack Mastery"', c: '#86EFAC' }, { t: ',', c: '#E3E2E2' }] },
+  // { tokens: [{ t: '  focus', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"FullStack Mastery"', c: '#86EFAC' }, { t: ',', c: '#E3E2E2' }] },
   { tokens: [{ t: '  skills', c: '#60A5FA' }, { t: ': [', c: '#E3E2E2' }] },
   { tokens: [{ t: '    ', c: '#E3E2E2' }, { t: '"React.js"', c: '#86EFAC' }, { t: ', ', c: '#E3E2E2' }, { t: '"Next.js"', c: '#86EFAC' }, { t: ',', c: '#E3E2E2' }] },
   { tokens: [{ t: '    ', c: '#E3E2E2' }, { t: '"Express.js"', c: '#86EFAC' }, { t: ', ', c: '#E3E2E2' }, { t: '"Node.js"', c: '#86EFAC' },  { t: ',', c: '#E3E2E2' }] },
