@@ -124,7 +124,7 @@ export default function Hero() {
                 </span>
               </a>
               <a
-                href={resumePdf} target="_blank" rel="noopener noreferrer" download="Munib_Sajjad_Resume.pdf"
+                href={resumePdf} target="_blank" rel="noopener noreferrer" download="Munib_Sajjad_Resume.docx"
                 className="px-7 py-[13px] bg-white/5 text-ink font-semibold text-sm rounded-lg border border-white/15 inline-flex items-center gap-2 transition-all duration-300 hover:border-ruby/40 hover:bg-ruby/8"
               >
                 Get Resume ↑
