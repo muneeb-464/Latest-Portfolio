@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { SiGithub, SiX, SiInstagram } from 'react-icons/si'
 import { FaLinkedin } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
-import resumePdf from './Munib_Sajjad_Resume.docx'
+const resumePdf = "/Munib_Sajjad_Resume.docx";
 const socials = [
   { icon: SiGithub, href: 'https://github.com/muneeb-464' },
   { icon: FaLinkedin, href: 'https://www.linkedin.com/in/munib-sajjad/' },
