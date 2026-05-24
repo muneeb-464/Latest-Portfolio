@@ -11,9 +11,33 @@ import project4 from '../assets/Project-4.png'
 import project5 from '../assets/Project-5.png'
 import project6 from '../assets/Project-6.png'
 import project7 from '../assets/Project-7.png'
+import project8 from '../assets/Project-8.png'
+import project9 from '../assets/Project-9.png'
+
+
 
 
 export const projects = [
+  {
+    title: 'Fiverr Keyword Research',
+    tagline: 'Data-Driven Keyword Tool for Fiverr Sellers',
+    description: "Fiverr sellers often guess at keywords, costing them search visibility. This automated tool applies a custom ranking formula to surface high-opportunity, low-competition keywords — giving freelancers a data-driven edge when optimizing their gigs. Built after identifying a gap in existing tools that don't account for Fiverr-specific search dynamics.",
+    tags: ['JavaScript', 'Node.js', 'Automation', 'Custom Ranking Algorithm'],
+    image: project9,
+    accent: '#E63946',
+    live: 'https://keyword-research-for-fiverr-t44w.vercel.app/',
+    github: 'https://github.com/muneeb-464/keyword-research',
+  },
+  {
+    title: 'Deal Flow',
+    tagline: 'Sales Pipeline & Deal Management Platform',
+    description: 'DealFlow is a modern sales pipeline and deal management platform built to help teams track, manage, and close deals efficiently. The platform provides real-time deal tracking, stage management, and team collaboration tools — giving sales professionals full visibility over their pipeline.',
+    tags: ['React.js', 'TailwindCSS', 'Firebase', 'Vercel'],
+    image: project8,
+    accent: '#E63946',
+    live: 'https://dealflow-v1.vercel.app',
+    github: 'https://github.com/muneeb-464/Dealflow',
+  },
    {
     title: 'Data Vault',
     tagline: 'User Categories Data Management System',
@@ -76,6 +100,7 @@ export const projects = [
     github: '#',
   },
  
+
   {
     title: 'Real Estate Tech',
     tagline: 'Contran Realtor Pro',
@@ -96,7 +121,6 @@ const card = {
 }
 
 export function ProjectCard({ p }) {
-  const [expanded, setExpanded] = useState(false)
   const [tilt, setTilt] = useState({ x: 0, y: 0 })
   const [gloss, setGloss] = useState({ x: 50, y: 50 })
 
@@ -120,12 +144,12 @@ export function ProjectCard({ p }) {
       style={{ perspective: '1000px' }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="transition-[opacity,filter] duration-300 group-hover/cards:opacity-40 group-hover/cards:blur-[3px] hover:!opacity-100 hover:!blur-none"
+      className="transition-[opacity,filter] duration-300 group-hover/cards:opacity-40 group-hover/cards:blur-[3px] hover:!opacity-100 hover:!blur-none h-full"
     >
       <div
         className="
           group relative bg-[rgba(18,18,18,0.85)] border border-white/8 rounded-3xl overflow-hidden
-          backdrop-blur-md flex flex-col
+          backdrop-blur-md flex flex-col h-full
           hover:border-ruby/30 hover:shadow-[0_8px_48px_rgba(230,57,70,0.18)]
           before:content-[''] before:absolute before:top-0 before:right-0 before:w-56 before:h-56
           before:bg-[radial-gradient(circle_at_top_right,rgba(230,57,70,0.22),transparent_65%)]
@@ -159,16 +183,8 @@ export function ProjectCard({ p }) {
         <div className="relative z-10 p-6 flex-1 flex flex-col gap-3">
           <h3 className="text-xl font-bold text-ink m-0 tracking-[-0.01em]">{p.title}</h3>
           <p className="text-[13px] font-semibold m-0 ruby-grad">{p.tagline}</p>
-          <div className="flex-1">
-            <p className={`text-sm text-gray-500 leading-[1.7] m-0 transition-all duration-300 ${expanded ? '' : 'line-clamp-3'}`}>
-              {p.description}
-            </p>
-            <button
-              onClick={() => setExpanded(prev => !prev)}
-              className="mt-1 text-[13px] font-bold text-ruby hover:text-ruby/80 transition-colors duration-200"
-            >
-              {expanded ? 'See less ↑' : 'See more ↓'}
-            </button>
+          <div className="flex-1 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <p className="text-sm text-gray-500 leading-[1.7] m-0">{p.description}</p>
           </div>
 
           {/* Tags — sliding fill on hover */}
@@ -237,7 +253,7 @@ export default function Projects() {
         {/* Top 3 cards */}
         <motion.div
           variants={container} initial="hidden" whileInView="show" viewport={{ once: true }}
-          className="grid gap-6 items-start group/cards"
+          className="grid gap-6 group/cards"
           style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))' }}
         >
           {featured.map((p) => <ProjectCard key={p.title} p={p} />)}

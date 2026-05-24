@@ -53,7 +53,7 @@ export default function ProjectsPage() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid gap-6 items-start group/cards"
+          className="grid gap-6 group/cards"
           style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))' }}
         >
           {projects.map((p) => <ProjectCard key={p.title} p={p} />)}
