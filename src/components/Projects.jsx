@@ -26,14 +26,14 @@ export const projects = [
   },
 
    {
-    title: 'Displine Dashboard',
+    title: 'DisplineOS',
     tagline: 'User Maintenance and Daily Goals with Security and Privacy',
     description: 'Displine is a comprehensive user maintenance and daily goals dashboard designed to help individuals stay organized, motivated, and on track with their personal and professional objectives. The platform emphasizes security and privacy, ensuring that users can manage their tasks and goals with confidence.',
     tags: ['React', 'TypeScript', 'Node.js', 'TailwindCSS', 'MongoDB'],
     image: project6,
     accent: '#E63946',
-    live: 'https://shinespanproject.netlify.app/',
-    github: '#',
+    live: 'https://displineos-v1.vercel.app/',
+    github: 'https://github.com/muneeb-464/Displineos-V1',
   },
   {
     title: 'Travel & Chalet Booking',

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { SiGithub, SiX, SiInstagram } from 'react-icons/si'
 import { FaLinkedin } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
-import resumePdf from '../assets/Resume.docx.pdf'
+const resumePdf = "/Munib_Sajjad_Resume.docx";
 const socials = [
   { icon: SiGithub, href: 'https://github.com/muneeb-464' },
   { icon: FaLinkedin, href: 'https://www.linkedin.com/in/munib-sajjad/' },
@@ -10,17 +10,18 @@ const socials = [
   { icon: SiInstagram, href: 'https://www.instagram.com/muneeb464/' },
 ]
 
+
 const codeLines = [
   { tokens: [{ t: 'const ', c: '#C084FC' }, { t: 'developer', c: '#E3E2E2' }, { t: ' = {', c: '#E3E2E2' }] },
-  { tokens: [{ t: '  name', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"Munib Sajjad"', c: '#86EFAC' }, { t: ',', c: '#E3E2E2' }] },
-  { tokens: [{ t: '  focus', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"FullStack Mastery"', c: '#86EFAC' }, { t: ',', c: '#E3E2E2' }] },
+  { tokens: [{ t: '  name', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"Munib Sajjad"', c: '#FD7581' }, { t: ',', c: '#E3E2E2' }] },
+  { tokens: [{ t: '  focus', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"Full-Stack Developer (MERN Stack Specialist)"', c: '#FD7581' }, { t: ',', c: '#E3E2E2' }] },
   { tokens: [{ t: '  skills', c: '#60A5FA' }, { t: ': [', c: '#E3E2E2' }] },
-  { tokens: [{ t: '    ', c: '#E3E2E2' }, { t: '"React.js"', c: '#86EFAC' }, { t: ', ', c: '#E3E2E2' }, { t: '"Next.js"', c: '#86EFAC' }, { t: ',', c: '#E3E2E2' }] },
-  { tokens: [{ t: '    ', c: '#E3E2E2' }, { t: '"Express.js"', c: '#86EFAC' }, { t: ', ', c: '#E3E2E2' }, { t: '"Node.js"', c: '#86EFAC' },  { t: ',', c: '#E3E2E2' }] },
-  { tokens: [{ t: '    ', c: '#E3E2E2' }, { t: '"MongoDB"', c: '#86EFAC' }] },
+  { tokens: [{ t: '    ', c: '#E3E2E2' }, { t: '"React.js"', c: '#FD7581' }, { t: ', ', c: '#E3E2E2' }, { t: '"Next.js"', c: '#FD7581' }, { t: ',', c: '#E3E2E2' }] },
+  { tokens: [{ t: '    ', c: '#E3E2E2' }, { t: '"Express.js"', c: '#FD7581' }, { t: ', ', c: '#E3E2E2' }, { t: '"Node.js"', c: '#FD7581' },  { t: ',', c: '#E3E2E2' }] },
+  { tokens: [{ t: '    ', c: '#E3E2E2' }, { t: '"MongoDB"', c: '#FD7581' }] },
   { tokens: [{ t: '  ],', c: '#E3E2E2' }] },
-  { tokens: [{ t: '  passionate', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: 'true', c: '#E63946' }, { t: ',', c: '#E3E2E2' }] },
-  { tokens: [{ t: '  motto', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"Build with Purpose"', c: '#86EFAC' }] },
+  { tokens: [{ t: '  passionate', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: 'true', c: '#FD7581' }, { t: ',', c: '#E3E2E2' }] },
+  { tokens: [{ t: '  motto', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"Build with Purpose"', c: '#FD7581' }] },
   { tokens: [{ t: '};', c: '#E3E2E2' }] },
   { tokens: [] },
   { tokens: [{ t: 'developer', c: '#60A5FA' }, { t: '.', c: '#E3E2E2' }, { t: 'build', c: '#FCD34D' }, { t: '();', c: '#E3E2E2' }] },
@@ -123,7 +124,7 @@ export default function Hero() {
                 </span>
               </a>
               <a
-                href={resumePdf} target="_blank" rel="noopener noreferrer" download="Munib_Sajjad_Resume.pdf"
+                href={resumePdf} target="_blank" rel="noopener noreferrer" download="Munib_Sajjad_Resume.docx"
                 className="px-7 py-[13px] bg-white/5 text-ink font-semibold text-sm rounded-lg border border-white/15 inline-flex items-center gap-2 transition-all duration-300 hover:border-ruby/40 hover:bg-ruby/8"
               >
                 Get Resume ↑
