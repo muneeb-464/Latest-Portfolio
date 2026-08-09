@@ -1,7 +1,7 @@
 import { SiGithub, SiX, SiInstagram } from 'react-icons/si'
 import { FaLinkedin } from 'react-icons/fa'
 
-const navLinks = ['About', 'Experience', 'Skills', 'Projects', 'Contact']
+const navLinks = ['About', 'Projects', 'Experience', 'Skills', 'Contact']
 
 const socials = [
   { icon: SiGithub,    href: 'https://github.com/muneeb-464'                },

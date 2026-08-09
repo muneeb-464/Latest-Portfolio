@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { SiGithub, SiX, SiInstagram } from 'react-icons/si'
 import { FaLinkedin } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
+import About from './About'
 const resumePdf = "/Muhammad_Munib_Sajjad_Full_Stack_Developer.pdf";
 const socials = [
   { icon: SiGithub, href: 'https://github.com/muneeb-464' },
@@ -58,11 +59,12 @@ export default function Hero() {
   }
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden pt-[100px] pb-16 px-6">
+    <section id="hero" className="relative overflow-hidden px-6">
 
-
-      <div className="max-w-[1200px] mx-auto w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      {/* ── Intro row — fills the viewport ── */}
+      <div className="min-h-screen flex items-center pt-[100px] pb-16">
+        <div className="max-w-[1200px] mx-auto w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
           {/* ── Left ── */}
           <motion.div variants={stagger} initial="hidden" animate="show" className="flex flex-col gap-6">
@@ -183,8 +185,16 @@ export default function Hero() {
             </div>
           </motion.div>
 
+          </div>
         </div>
       </div>
+
+      {/* ── Divider ── */}
+      <div className="max-w-[1200px] mx-auto h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+      {/* ── About block — same section, own #about anchor ── */}
+      <About />
+
     </section>
   )
 }

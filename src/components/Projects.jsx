@@ -39,7 +39,7 @@ export const projects = [
     tags: ['React 19', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Stripe'],
     image: project12,
     accent: '#E63946',
-    live: '#',
+    live: 'https://art-desgin.vercel.app/',
     github: '#',
   },
   {
@@ -49,7 +49,7 @@ export const projects = [
     tags: ['Next.js', 'React', 'Strapi', 'Supabase', 'Railway', 'SEO'],
     image: project13,
     accent: '#E63946',
-    live: 'https://studiesinmalaysia.com',
+    live: 'https://www.studiesinmalaysia.com/',
     github: '#',
   },
   {
@@ -246,22 +246,26 @@ export function ProjectCard({ p }) {
             ))}
           </div>
 
-          {/* Buttons */}
-          <div className="flex gap-2.5 mt-1">
-            <a
-              href={p.live} target="_blank" rel="noopener noreferrer"
-              className="flex-1 py-[10px] bg-ruby text-white text-[13px] font-semibold rounded-lg flex items-center justify-center gap-1.5 transition-opacity duration-200 hover:opacity-85"
-            >
-              <HiArrowTopRightOnSquare className="text-sm" />
-              Live Demo
-            </a>
-            <a
-              href={p.github} target="_blank" rel="noopener noreferrer"
-              className="flex-1 py-[10px] bg-white/5 text-ink text-[13px] font-semibold rounded-lg border border-white/12 flex items-center justify-center gap-1.5 transition-all duration-200 hover:border-white/25 hover:bg-white/8"
-            >
-              <SiGithub className="text-sm" />
-              GitHub
-            </a>
+          {/* Buttons — row is dropped entirely when neither link exists */}
+          <div className={`flex gap-2.5 ${p.live === '#' && p.github === '#' ? 'hidden' : 'mt-1'}`}>
+            {p.live !== '#' && (
+              <a
+                href={p.live} target="_blank" rel="noopener noreferrer"
+                className="flex-1 py-[10px] bg-ruby text-white text-[13px] font-semibold rounded-lg flex items-center justify-center gap-1.5 transition-opacity duration-200 hover:opacity-85"
+              >
+                <HiArrowTopRightOnSquare className="text-sm" />
+                Live Demo
+              </a>
+            )}
+            {p.github !== '#' && (
+              <a
+                href={p.github} target="_blank" rel="noopener noreferrer"
+                className="flex-1 py-[10px] bg-white/5 text-ink text-[13px] font-semibold rounded-lg border border-white/12 flex items-center justify-center gap-1.5 transition-all duration-200 hover:border-white/25 hover:bg-white/8"
+              >
+                <SiGithub className="text-sm" />
+                GitHub
+              </a>
+            )}
           </div>
         </div>
       </div>

@@ -59,7 +59,7 @@ export default function About() {
   }
 
   return (
-    <section id="about" className="py-[120px] px-6 relative">
+    <div id="about" className="py-[120px] relative scroll-mt-24">
       <div className="max-w-[1200px] mx-auto">
 
         <motion.p
@@ -145,6 +145,6 @@ export default function About() {
 
         </div>
       </div>
-    </section>
+    </div>
   )
 }
