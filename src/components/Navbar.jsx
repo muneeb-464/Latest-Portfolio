@@ -31,8 +31,13 @@ export default function Navbar() {
         {/* Pill */}
         <div className="flex items-center justify-between gap-8 px-5 py-[10px] rounded-full bg-black/60 backdrop-blur-lg border border-white/8 shadow-[0_10px_40px_rgba(0,0,0,0.5)] min-w-[480px] max-md:min-w-0 max-md:w-[calc(100vw-32px)]">
 
-          {/* Logo */}
-          <img src="/logo.png" alt="Logo" className="w-[34px] h-[34px] rounded-lg object-contain shrink-0" />
+          {/* Logo + name */}
+          <a href="#hero" className="flex items-center gap-2.5 shrink-0">
+            <img src="/logo.png" alt="Munib Sajjad" className="w-[34px] h-[34px] rounded-lg object-contain shrink-0" />
+            <span className="text-sm font-bold tracking-[-0.01em] text-ink whitespace-nowrap">
+              Munib <span className="text-ruby">Sajjad</span>
+            </span>
+          </a>
 
           {/* Desktop links */}
           <ul className="flex gap-7 list-none m-0 p-0 max-md:hidden">

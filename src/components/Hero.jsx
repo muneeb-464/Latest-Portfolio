@@ -3,6 +3,7 @@ import { SiGithub, SiX, SiInstagram } from 'react-icons/si'
 import { FaLinkedin } from 'react-icons/fa'
 import { useState, useEffect } from 'react'
 import About from './About'
+import profilePhoto from '../assets/profile-photo 2.jpeg'
 const resumePdf = "/Muhammad_Munib_Sajjad_Full_Stack_Developer.pdf";
 const socials = [
   { icon: SiGithub, href: 'https://github.com/muneeb-464' },
@@ -12,23 +13,6 @@ const socials = [
 ]
 
 
-const codeLines = [
-  { tokens: [{ t: 'const ', c: '#C084FC' }, { t: 'developer', c: '#E3E2E2' }, { t: ' = {', c: '#E3E2E2' }] },
-  { tokens: [{ t: '  name', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"Munib Sajjad"', c: '#FD7581' }, { t: ',', c: '#E3E2E2' }] },
-  { tokens: [{ t: '  focus', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"Full-Stack Developer (MERN Stack Specialist)"', c: '#FD7581' }, { t: ',', c: '#E3E2E2' }] },
-  { tokens: [{ t: '  skills', c: '#60A5FA' }, { t: ': [', c: '#E3E2E2' }] },
-  { tokens: [{ t: '    ', c: '#E3E2E2' }, { t: '"React"', c: '#FD7581' }, { t: ', ', c: '#E3E2E2' }, { t: '"Next.js"', c: '#FD7581' }, { t: ', ', c: '#E3E2E2' }, { t: '"TypeScript"', c: '#FD7581' }, { t: ',', c: '#E3E2E2' }] },
-  { tokens: [{ t: '    ', c: '#E3E2E2' }, { t: '"Node.js"', c: '#FD7581' }, { t: ', ', c: '#E3E2E2' }, { t: '"NestJS"', c: '#FD7581' }, { t: ', ', c: '#E3E2E2' }, { t: '"Express"', c: '#FD7581' },  { t: ',', c: '#E3E2E2' }] },
-  { tokens: [{ t: '    ', c: '#E3E2E2' }, { t: '"MongoDB"', c: '#FD7581' }, { t: ', ', c: '#E3E2E2' }, { t: '"PostgreSQL"', c: '#FD7581' }] },
-  { tokens: [{ t: '  ],', c: '#E3E2E2' }] },
-  { tokens: [{ t: '  experience', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"5+ years"', c: '#FD7581' }, { t: ',', c: '#E3E2E2' }] },
-  { tokens: [{ t: '  shipped', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"40+ apps"', c: '#FD7581' }, { t: ',', c: '#E3E2E2' }] },
-  { tokens: [{ t: '  motto', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"Build with Purpose"', c: '#FD7581' }] },
-  { tokens: [{ t: '};', c: '#E3E2E2' }] },
-  { tokens: [] },
-  { tokens: [{ t: 'developer', c: '#60A5FA' }, { t: '.', c: '#E3E2E2' }, { t: 'build', c: '#FCD34D' }, { t: '();', c: '#E3E2E2' }] },
-]
-
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } }
 const fadeUp = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0 } }
 const roles = ['Full-Stack Developer', 'MERN Specialist', 'Software Engineer', 'Instructor']
@@ -37,6 +21,7 @@ export default function Hero() {
   const [index, setIndex] = useState(0)
   const [tilt, setTilt] = useState({ x: 0, y: 0 })
   const [gloss, setGloss] = useState({ x: 50, y: 50 })
+  const [hovered, setHovered] = useState(false)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -56,6 +41,7 @@ export default function Hero() {
   const handleCardMouseLeave = () => {
     setTilt({ x: 0, y: 0 })
     setGloss({ x: 50, y: 50 })
+    setHovered(false)
   }
 
   return (
@@ -73,16 +59,19 @@ export default function Hero() {
               Welcome to my Universe
             </motion.p>
 
-            <motion.h1 variants={fadeUp} className="text-[clamp(40px,5vw,64px)] font-extrabold leading-[1.08] tracking-[-0.04em] m-0 text-ink">
-              Crafting <span className="ruby-grad">Digital</span> <br />
-              <span className="ruby-grad">Masterpieces</span>
+            <motion.h1 variants={fadeUp} className="text-[clamp(44px,6vw,76px)] font-extrabold leading-[1.02] tracking-[-0.04em] m-0 text-ink">
+              Munib <span className="ruby-grad">Sajjad</span>
             </motion.h1>
+
+            <motion.p variants={fadeUp} className="text-[clamp(19px,2.2vw,26px)] font-bold tracking-[-0.02em] text-gray-500 m-0 -mt-2">
+              Crafting Digital Masterpieces
+            </motion.p>
 
             <motion.p
               variants={fadeUp}
-              className="text-base text-gray-400 leading-[1.7] m-0 max-w-[460px]"
+              className="relative text-[17px] text-gray-300 leading-[1.75] m-0 max-w-[520px] pl-5 border-l-2 border-ruby/60"
             >
-              I'm <strong className="text-ink">Munib Sajjad</strong>, a professional{' '}
+              A professional{' '}
 
               <span className="inline-block align-bottom">
                 <motion.span
@@ -96,8 +85,8 @@ export default function Hero() {
                 </motion.span>
               </span>
 
-              {' '}<br /> dedicated to building high-performance <br />
-              user-centric web applications.
+              {' '}<br /> dedicated to building high-performance, user-centric web
+              applications and CRMs with integrated <span className="text-ink font-semibold">AI</span>.
             </motion.p>
 
             {/* Socials */}
@@ -135,53 +124,49 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* ── Right: Code Editor ── */}
+          {/* ── Right: Photo ── */}
           <motion.div
             initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+            className="flex justify-center"
             onMouseMove={handleCardMouseMove}
             onMouseLeave={handleCardMouseLeave}
+            onMouseEnter={() => setHovered(true)}
             style={{ perspective: '1000px' }}
           >
             <div
-              className="relative bg-[rgba(14,14,14,0.85)] border border-white/8 rounded-2xl overflow-hidden backdrop-blur-lg shadow-[0_24px_64px_rgba(0,0,0,0.5)] transition-shadow duration-300 hover:shadow-[0_32px_80px_rgba(230,57,70,0.18),0_0_0_1px_rgba(230,57,70,0.12)]"
+              className="w-[290px] h-[340px] sm:w-[400px] sm:h-[470px] rounded-3xl overflow-hidden relative border border-white/8"
               style={{
                 transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
-                transition: 'transform 0.12s ease, box-shadow 0.3s ease',
+                transition: 'transform 0.12s ease, box-shadow 0.4s ease, filter 0.5s ease',
+                filter: hovered ? 'grayscale(0%) brightness(1)' : 'grayscale(100%) brightness(1.15)',
+                boxShadow: hovered
+                  ? '0 32px 80px rgba(230,57,70,0.25), 0 0 0 1px rgba(230,57,70,0.2)'
+                  : '0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06)',
               }}
             >
-              {/* Glossy light reflection */}
+              <img src={profilePhoto} alt="Munib Sajjad" className="w-full h-full object-cover" />
+
+              {/* White overlay — fades out on hover */}
               <div
-                className="absolute inset-0 pointer-events-none rounded-2xl z-10 opacity-0 hover:opacity-100 transition-opacity duration-200"
-                style={{ background: `radial-gradient(circle at ${gloss.x}% ${gloss.y}%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.04) 40%, transparent 70%)` }}
+                className="absolute inset-0 rounded-3xl transition-opacity duration-500 pointer-events-none"
+                style={{ background: 'rgba(255,255,255,0.18)', opacity: hovered ? 0 : 1 }}
               />
-              {/* Header */}
-              <div className="px-4 py-3 border-b border-white/7 flex items-center gap-2 bg-black/30">
-                <span className="w-3 h-3 rounded-full bg-[#FF5F57]" />
-                <span className="w-3 h-3 rounded-full bg-[#874242]" />
-                <span className="w-3 h-3 rounded-full bg-[#442E2E]" />
-                <span className="text-xs text-gray-600 ml-2">dev/Munib.ts</span>
-              </div>
 
-              {/* Code */}
-              <pre className="m-0 px-6 py-6 text-[13.5px] leading-[1.85] font-mono overflow-x-auto">
-                {codeLines.map((line, i) => (
-                  <div key={i} className="flex">
-                    <span className="text-gray-700 mr-5 select-none min-w-[20px] text-right">{i + 1}</span>
-                    <span>
-                      {line.tokens.map((tok, j) => (
-                        <span key={j} style={{ color: tok.c }}>{tok.t}</span>
-                      ))}
-                    </span>
-                  </div>
-                ))}
-              </pre>
+              {/* Glossy light reflection — follows cursor */}
+              <div
+                className="absolute inset-0 pointer-events-none z-10 rounded-3xl transition-opacity duration-200"
+                style={{
+                  background: `radial-gradient(circle at ${gloss.x}% ${gloss.y}%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 40%, transparent 65%)`,
+                  opacity: hovered ? 1 : 0,
+                }}
+              />
 
-              {/* Status bar */}
-              <div className="px-4 py-2 border-t border-white/6 bg-ruby/10 flex justify-between">
-                <span className="text-[11px] text-ruby font-semibold">● Full Stack Developer</span>
-                <span className="text-[11px] text-gray-600">UTF-8 · LF</span>
-              </div>
+              {/* Bottom vignette */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{ background: 'linear-gradient(180deg, transparent 55%, rgba(10,10,10,0.75) 100%)' }}
+              />
             </div>
           </motion.div>
 

@@ -1,6 +1,22 @@
 import { motion } from 'framer-motion'
-import profilePhoto from '../assets/profile-photo 2.jpeg'
 import { useState, useEffect, useRef } from 'react'
+
+const codeLines = [
+  { tokens: [{ t: 'const ', c: '#C084FC' }, { t: 'developer', c: '#E3E2E2' }, { t: ' = {', c: '#E3E2E2' }] },
+  { tokens: [{ t: '  name', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"Munib Sajjad"', c: '#FD7581' }, { t: ',', c: '#E3E2E2' }] },
+  { tokens: [{ t: '  focus', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"Full-Stack Developer (MERN Stack Specialist)"', c: '#FD7581' }, { t: ',', c: '#E3E2E2' }] },
+  { tokens: [{ t: '  skills', c: '#60A5FA' }, { t: ': [', c: '#E3E2E2' }] },
+  { tokens: [{ t: '    ', c: '#E3E2E2' }, { t: '"React"', c: '#FD7581' }, { t: ', ', c: '#E3E2E2' }, { t: '"Next.js"', c: '#FD7581' }, { t: ', ', c: '#E3E2E2' }, { t: '"TypeScript"', c: '#FD7581' }, { t: ',', c: '#E3E2E2' }] },
+  { tokens: [{ t: '    ', c: '#E3E2E2' }, { t: '"Node.js"', c: '#FD7581' }, { t: ', ', c: '#E3E2E2' }, { t: '"NestJS"', c: '#FD7581' }, { t: ', ', c: '#E3E2E2' }, { t: '"Express"', c: '#FD7581' },  { t: ',', c: '#E3E2E2' }] },
+  { tokens: [{ t: '    ', c: '#E3E2E2' }, { t: '"MongoDB"', c: '#FD7581' }, { t: ', ', c: '#E3E2E2' }, { t: '"PostgreSQL"', c: '#FD7581' }] },
+  { tokens: [{ t: '  ],', c: '#E3E2E2' }] },
+  { tokens: [{ t: '  experience', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"5+ years"', c: '#FD7581' }, { t: ',', c: '#E3E2E2' }] },
+  { tokens: [{ t: '  shipped', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"40+ apps"', c: '#FD7581' }, { t: ',', c: '#E3E2E2' }] },
+  { tokens: [{ t: '  motto', c: '#60A5FA' }, { t: ': ', c: '#E3E2E2' }, { t: '"Build with Purpose"', c: '#FD7581' }] },
+  { tokens: [{ t: '};', c: '#E3E2E2' }] },
+  { tokens: [] },
+  { tokens: [{ t: 'developer', c: '#60A5FA' }, { t: '.', c: '#E3E2E2' }, { t: 'build', c: '#FCD34D' }, { t: '();', c: '#E3E2E2' }] },
+]
 
 const aboutText =
   "I'm Munib Sajjad, a Full-Stack Developer (MERN) with 5+ years of experience building production web applications in React, Next.js, Node.js and TypeScript. I currently build and architect a freelance marketplace at Hunar.pk, and scaled multi-country education platforms to 500+ SEO-optimized pages at BoomerangEdu. Across four years at Meta Brains I built 40+ full-stack applications — eCommerce, AI-driven apps, booking systems and CRM dashboards — that became the foundation of courses reaching 100k+ students, and was promoted from Senior Developer to Project Manager leading a 5-member team. I also teach on Preply with a 5-star rating. My strengths are performance optimization, REST APIs, real-time features, and owning delivery end to end."
@@ -18,7 +34,6 @@ export default function About() {
   const [typed, setTyped]   = useState('')
   const [tilt, setTilt]     = useState({ x: 0, y: 0 })
   const [gloss, setGloss]   = useState({ x: 50, y: 50 })
-  const [hovered, setHovered] = useState(false)
   const textRef  = useRef(null)
   const hasTyped = useRef(false)
 
@@ -55,7 +70,6 @@ export default function About() {
   const handleMouseLeave = () => {
     setTilt({ x: 0, y: 0 })
     setGloss({ x: 50, y: 50 })
-    setHovered(false)
   }
 
   return (
@@ -97,49 +111,53 @@ export default function About() {
             </motion.div>
           </motion.div>
 
-          {/* ── Right: Photo ── */}
+          {/* ── Right: Code Editor ── */}
           <motion.div
             initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.7, ease: 'easeOut' }}
-            className="flex justify-center"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            onMouseEnter={() => setHovered(true)}
             style={{ perspective: '1000px' }}
           >
             <div
-              className="w-[340px] h-[400px] rounded-3xl overflow-hidden relative border border-white/8"
+              className="relative bg-[rgba(14,14,14,0.85)] border border-white/8 rounded-2xl overflow-hidden backdrop-blur-lg shadow-[0_24px_64px_rgba(0,0,0,0.5)] transition-shadow duration-300 hover:shadow-[0_32px_80px_rgba(230,57,70,0.18),0_0_0_1px_rgba(230,57,70,0.12)]"
               style={{
                 transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
-                transition: 'transform 0.12s ease, box-shadow 0.4s ease, filter 0.5s ease',
-                filter: hovered ? 'grayscale(0%) brightness(1)' : 'grayscale(100%) brightness(1.15)',
-                boxShadow: hovered
-                  ? '0 32px 80px rgba(230,57,70,0.25), 0 0 0 1px rgba(230,57,70,0.2)'
-                  : '0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06)',
+                transition: 'transform 0.12s ease, box-shadow 0.3s ease',
               }}
             >
-              <img src={profilePhoto} alt="Munib Sajjad" className="w-full h-full object-cover" />
-
-              {/* White overlay — fades out on hover */}
+              {/* Glossy light reflection */}
               <div
-                className="absolute inset-0 rounded-3xl transition-opacity duration-500 pointer-events-none"
-                style={{ background: 'rgba(255,255,255,0.18)', opacity: hovered ? 0 : 1 }}
+                className="absolute inset-0 pointer-events-none rounded-2xl z-10 opacity-0 hover:opacity-100 transition-opacity duration-200"
+                style={{ background: `radial-gradient(circle at ${gloss.x}% ${gloss.y}%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.04) 40%, transparent 70%)` }}
               />
+              {/* Header */}
+              <div className="px-4 py-3 border-b border-white/7 flex items-center gap-2 bg-black/30">
+                <span className="w-3 h-3 rounded-full bg-[#FF5F57]" />
+                <span className="w-3 h-3 rounded-full bg-[#874242]" />
+                <span className="w-3 h-3 rounded-full bg-[#442E2E]" />
+                <span className="text-xs text-gray-600 ml-2">dev/Munib.ts</span>
+              </div>
 
-              {/* Glossy light reflection — follows cursor */}
-              <div
-                className="absolute inset-0 pointer-events-none z-10 rounded-3xl transition-opacity duration-200"
-                style={{
-                  background: `radial-gradient(circle at ${gloss.x}% ${gloss.y}%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 40%, transparent 65%)`,
-                  opacity: hovered ? 1 : 0,
-                }}
-              />
+              {/* Code */}
+              <pre className="m-0 px-6 py-6 text-[13.5px] leading-[1.85] font-mono overflow-x-auto">
+                {codeLines.map((line, i) => (
+                  <div key={i} className="flex">
+                    <span className="text-gray-700 mr-5 select-none min-w-[20px] text-right">{i + 1}</span>
+                    <span>
+                      {line.tokens.map((tok, j) => (
+                        <span key={j} style={{ color: tok.c }}>{tok.t}</span>
+                      ))}
+                    </span>
+                  </div>
+                ))}
+              </pre>
 
-              {/* Bottom vignette */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{ background: 'linear-gradient(180deg, transparent 55%, rgba(10,10,10,0.75) 100%)' }}
-              />
+              {/* Status bar */}
+              <div className="px-4 py-2 border-t border-white/6 bg-ruby/10 flex justify-between">
+                <span className="text-[11px] text-ruby font-semibold">● Full Stack Developer</span>
+                <span className="text-[11px] text-gray-600">UTF-8 · LF</span>
+              </div>
             </div>
           </motion.div>
 
