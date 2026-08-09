@@ -7,17 +7,61 @@ import { HiArrowTopRightOnSquare } from 'react-icons/hi2'
 import project1 from '../assets/project-1.png'
 import project2 from '../assets/project-2.png'
 import project3 from '../assets/Project-3.png'
-import project4 from '../assets/Project-4.png'
+import project4 from '../assets/project-4.png'
 import project5 from '../assets/Project-5.png'
-import project6 from '../assets/Project-6.png'
-import project7 from '../assets/Project-7.png'
-import project8 from '../assets/Project-8.png'
-import project9 from '../assets/Project-9.png'
+import project6 from '../assets/project-6.png'
+import project7 from '../assets/project-7.png'
+import project8 from '../assets/project-8.png'
+import project9 from '../assets/project-9.png'
+import project10 from '../assets/project-10.png'
+import project11 from '../assets/project-11.png'
+import project12 from '../assets/project-12.png'
+import project13 from '../assets/project-13.png'
 
 
 
 
 export const projects = [
+  {
+    title: 'Friendiary',
+    tagline: 'Social Calendar & Meetup Platform for Gen-Z',
+    description: 'A full-stack social calendar built around how friend groups actually make plans. Private communities, real-time chat over WebSockets, meetup proposals with RSVPs, shared memories and photo sharing, premium subscriptions, and an analytics-powered admin dashboard. Availability is modelled per-day so friends can see who is free before proposing anything.',
+    tags: ['React 19', 'TypeScript', 'NestJS', 'MongoDB', 'Socket.io'],
+    image: project10,
+    accent: '#E63946',
+    live: 'https://friendiary.com',
+    github: '#',
+  },
+  {
+    title: 'Pintale',
+    tagline: 'Art eCommerce Marketplace for Original Artists',
+    description: 'A full-stack art marketplace connecting collectors with original artists. Includes individual artist storefronts, Stripe and PayPal payment flows, inventory management, advanced faceted search across medium, size and price, an editorial content section, and an admin dashboard for catalogue and order operations.',
+    tags: ['React 19', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Stripe'],
+    image: project12,
+    accent: '#E63946',
+    live: '#',
+    github: '#',
+  },
+  {
+    title: 'Studies In Malaysia',
+    tagline: 'Multi-Country Education Platform & Lead Engine',
+    description: 'A statically generated education platform helping international students find Malaysian universities. Built 60+ generated pages with dynamic university and course directories, CMS-driven content via Strapi, and multi-country landing pages. Technical SEO across 100+ pages lifted target keywords from Google page 3–4 to page 1, and serverless enquiry workflows restored reliable lead generation.',
+    tags: ['Next.js', 'React', 'Strapi', 'Supabase', 'Railway', 'SEO'],
+    image: project13,
+    accent: '#E63946',
+    live: 'https://studiesinmalaysia.com',
+    github: '#',
+  },
+  {
+    title: 'Cason di Lanza',
+    tagline: 'Alpine Lodge — Full Brand & Booking Redesign',
+    description: 'A ground-up redesign of a family-run mountain refuge in the Italian Alps. The original site buried the property behind dated layout and cramped imagery; the rebuild leads with full-bleed drone photography, an editorial serif identity, and a direct reservation flow. Multilingual, with room listings, seasonal opening hours and altitude details surfaced up front.',
+    tags: ['Next.js', 'React', 'TailwindCSS', 'i18n', 'Vercel'],
+    image: project11,
+    accent: '#E63946',
+    live: '#',
+    github: '#',
+  },
   {
     title: 'Fiverr Keyword Research',
     tagline: 'Data-Driven Keyword Tool for Fiverr Sellers',
@@ -144,7 +188,7 @@ export function ProjectCard({ p }) {
       style={{ perspective: '1000px' }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="transition-[opacity,filter] duration-300 group-hover/cards:opacity-40 group-hover/cards:blur-[3px] hover:!opacity-100 hover:!blur-none h-full"
+      className="transition-opacity duration-300 group-hover/cards:opacity-40 hover:!opacity-100 h-full"
     >
       <div
         className="
@@ -174,6 +218,8 @@ export function ProjectCard({ p }) {
           <img
             src={p.image}
             alt={p.title}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#121212] via-transparent to-transparent opacity-80" />

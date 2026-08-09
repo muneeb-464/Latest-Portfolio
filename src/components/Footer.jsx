@@ -4,10 +4,10 @@ import { FaLinkedin } from 'react-icons/fa'
 const navLinks = ['About', 'Experience', 'Skills', 'Projects', 'Contact']
 
 const socials = [
-  { icon: SiGithub,    href: 'https://github.com/muneeb-464'     },
-  { icon: FaLinkedin,  href: 'https://linkedin.com/in/munib-sajjad' },
-  { icon: SiX,         href: 'https://x.com/munib-sajjad'          },
-  { icon: SiInstagram, href: 'https://instagram.com/munib-sajjad'  },
+  { icon: SiGithub,    href: 'https://github.com/muneeb-464'                },
+  { icon: FaLinkedin,  href: 'https://www.linkedin.com/in/munib-sajjad/'    },
+  { icon: SiX,         href: 'https://x.com/munib464'                       },
+  { icon: SiInstagram, href: 'https://www.instagram.com/muneeb464/'         },
 ]
 
 export default function Footer() {

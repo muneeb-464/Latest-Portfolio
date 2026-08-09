@@ -3,38 +3,49 @@ import { FaBriefcase, FaCalendarAlt } from 'react-icons/fa'
 
 const jobs = [
   {
-    role: 'Senior Developer & Team Leader',
-    company: 'Meta Brains',
+    role: 'Frontend Engineer',
+    company: 'Hunar.pk',
     location: 'Remote',
-    date: '2021 – 2025',
+    date: 'Jun 2026 – Present',
     bullets: [
-      'Led a team of 4–5 developers to deliver 10+ full-stack web applications.',
-      'Built AI-powered systems using OpenAI APIs to automate business workflows.',
-      'Improved development efficiency by optimizing code structure and team collaboration.',
-    ],
-  },
-    {
-    role: 'Programming Instructor',
-    company: 'Preply',
-    location: 'Remote · Global',
-    date: '2021 – Present',
-    bullets: [
-      'Teaching web development and programming to students globally with a 5-star rating.',
-      'Covering HTML, CSS, JavaScript, TypeScript, React.js, Next.js and Node.js in structured online sessions.',
+      'Developed 15+ responsive pages and 30+ reusable React components across freelancer onboarding, dashboards, gig management, messaging, payments and escrow workflows.',
+      'Integrated 40+ REST API endpoints, working with 3+ backend engineers and designers to turn Figma designs into pixel-perfect React components.',
+      'Built a scalable frontend architecture on React 19, Tailwind CSS, TanStack Query v5, Zustand v5 and Zod v4, with ESLint 9, Husky and lint-staged enforcing maintainability.',
     ],
   },
   {
-    role: 'QA Engineer',
-    company: 'Masood Textile Mills',
-    location: 'Pakistan',
-    date: '2019 – 2021',
+    role: 'Full Stack Developer & Website Manager',
+    company: 'BoomerangEdu.com',
+    location: 'Remote · Part-time',
+    date: 'Jul 2025 – Present',
     bullets: [
-      'Conducted staff training sessions on quality control procedures and internal software usage.',
-      'Performed software testing and quality assurance for enterprise textile systems.',
-      'Improved bug detection efficiency by up to 80% through structured testing processes.',
+      'Manage BoomerangEdu and affiliated education platforms (StudiesInMalaysia.com, StudyPsychotherapy.com) using Next.js, React, Node.js, Strapi, Supabase, Railway and Vercel.',
+      'Engineered 60+ statically generated pages with dynamic university/course directories, CMS-driven content and multi-country landing pages.',
+      'Cut page assets from 197MB to 42MB through AVIF/WebP conversion, PurgeCSS, lazy loading and Core Web Vitals work.',
+      'Implemented technical SEO across 100+ pages — Schema.org data, canonical tags, sitemaps — lifting target keywords from Google page 3–4 to page 1.',
     ],
   },
-
+  {
+    role: 'Senior Full Stack Developer (MERN) & Project Manager',
+    company: 'Meta Brains',
+    location: 'Remote',
+    date: 'Nov 2021 – Aug 2025',
+    bullets: [
+      'Built 40+ full-stack web applications — eCommerce platforms, AI-driven apps, booking systems, data-scraping tools and CRM dashboards — that became the foundation of 40+ published courses used by 100k+ students.',
+      'Promoted from Senior Web Developer to Project Manager, leading a 5-member cross-functional team.',
+      'Optimized delivery processes to increase monthly output by 150–200%.',
+    ],
+  },
+  {
+    role: 'Programming Instructor',
+    company: 'Preply',
+    location: 'Remote · Part-time',
+    date: 'Jul 2021 – Present',
+    bullets: [
+      'Mentor students and junior developers in building production-ready React and Next.js applications.',
+      'Maintain a 5-star rating while helping students ship real-world projects end to end.',
+    ],
+  },
 ]
 
 function JobCard({ job, side }) {

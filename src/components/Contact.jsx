@@ -12,9 +12,9 @@ import { HiEnvelope, HiPhone, HiMapPin } from 'react-icons/hi2'
 // ]
 
 const directContact = [
-  { icon: HiEnvelope, label: 'Email',    value: 'munib.sajjad464@gmail.com', href: 'mailto:munib.sajjad464@gmail.com' },
-  { icon: HiPhone,    label: 'Phone',    value: '+92 303 10002',          href: 'tel:+923036310002'               },
-  { icon: HiMapPin,   label: 'Location', value: 'Faisalabad, Pakistan',      href: null                              },
+  { icon: HiEnvelope, label: 'Email',    value: '464muneeb@gmail.com',  href: 'mailto:464muneeb@gmail.com' },
+  { icon: HiPhone,    label: 'Phone',    value: '+92 303 6310002',      href: 'tel:+923036310002'          },
+  { icon: HiMapPin,   label: 'Location', value: 'Faisalabad, Pakistan', href: null                         },
 ]
 
 const fadeUp = {

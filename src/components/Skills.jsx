@@ -1,30 +1,39 @@
 import { motion } from 'framer-motion'
 import {
-  SiMongodb, SiHtml5, SiCss, SiJavascript, SiTypescript,
-  SiReact, SiNextdotjs, SiMysql, SiFirebase, SiGit,
-  SiFigma, SiBootstrap, SiMui, SiTailwindcss, SiNodedotjs, SiPrisma,
+  SiHtml5, SiCss, SiJavascript, SiTypescript, SiReact, SiNextdotjs,
+  SiTailwindcss, SiRedux, SiReactquery, SiChartdotjs,
+  SiNodedotjs, SiExpress, SiNestjs, SiSocketdotio, SiMongodb, SiPostgresql,
+  SiSupabase, SiFirebase, SiDocker, SiOpenai, SiGit, SiVercel, SiJest, SiVite,
 } from 'react-icons/si'
 
 const row1 = [
-  { name: 'HTML',        icon: SiHtml5,      color: '#E34F26', category: 'Markup'    },
-  { name: 'CSS',         icon: SiCss,        color: '#1572B6', category: 'Styling'   },
-  { name: 'JavaScript',  icon: SiJavascript, color: '#F7DF1E', category: 'Language'  },
-  { name: 'TypeScript',  icon: SiTypescript, color: '#3178C6', category: 'Language'  },
-  { name: 'React',       icon: SiReact,      color: '#61DAFB', category: 'Framework' },
-  { name: 'Next.js',     icon: SiNextdotjs,  color: '#FFFFFF', category: 'Framework' },
-  { name: 'Tailwind',    icon: SiTailwindcss,color: '#06B6D4', category: 'Styling'   },
-  { name: 'Node.js',     icon: SiNodedotjs,  color: '#339933', category: 'Backend'   },
+  { name: 'TypeScript',   icon: SiTypescript,  color: '#3178C6', category: 'Language'  },
+  { name: 'JavaScript',   icon: SiJavascript,  color: '#F7DF1E', category: 'Language'  },
+  { name: 'React',        icon: SiReact,       color: '#61DAFB', category: 'Framework' },
+  { name: 'Next.js',      icon: SiNextdotjs,   color: '#FFFFFF', category: 'Framework' },
+  { name: 'Tailwind',     icon: SiTailwindcss, color: '#06B6D4', category: 'Styling'   },
+  { name: 'TanStack Query', icon: SiReactquery, color: '#FF4154', category: 'Data'     },
+  { name: 'Redux Toolkit',icon: SiRedux,       color: '#764ABC', category: 'State'     },
+  { name: 'Chart.js',     icon: SiChartdotjs,  color: '#FF6384', category: 'Dataviz'   },
+  { name: 'HTML',         icon: SiHtml5,       color: '#E34F26', category: 'Markup'    },
+  { name: 'CSS',          icon: SiCss,         color: '#1572B6', category: 'Styling'   },
+  { name: 'Vite',         icon: SiVite,        color: '#646CFF', category: 'Tooling'   },
+  { name: 'Jest',         icon: SiJest,        color: '#C21325', category: 'Testing'   },
 ]
 
 const row2 = [
-  { name: 'MongoDB',     icon: SiMongodb,    color: '#47A248', category: 'Database'  },
-  { name: 'MySQL',       icon: SiMysql,      color: '#4479A1', category: 'Database'  },
-  { name: 'Firebase',    icon: SiFirebase,   color: '#FFCA28', category: 'Backend'   },
-  { name: 'Prisma',      icon: SiPrisma,     color: '#5A67D8', category: 'ORM'       },
-  { name: 'Git',         icon: SiGit,        color: '#F05032', category: 'DevOps'    },
-  { name: 'Figma',       icon: SiFigma,      color: '#F24E1E', category: 'Design'    },
-  { name: 'Bootstrap',   icon: SiBootstrap,  color: '#7952B3', category: 'Styling'   },
-  { name: 'Material UI', icon: SiMui,        color: '#007FFF', category: 'UI Lib'    },
+  { name: 'Node.js',      icon: SiNodedotjs,   color: '#339933', category: 'Backend'   },
+  { name: 'Express.js',   icon: SiExpress,     color: '#FFFFFF', category: 'Backend'   },
+  { name: 'NestJS',       icon: SiNestjs,      color: '#E0234E', category: 'Backend'   },
+  { name: 'Socket.io',    icon: SiSocketdotio, color: '#FFFFFF', category: 'Realtime'  },
+  { name: 'MongoDB',      icon: SiMongodb,     color: '#47A248', category: 'Database'  },
+  { name: 'PostgreSQL',   icon: SiPostgresql,  color: '#4169E1', category: 'Database'  },
+  { name: 'Supabase',     icon: SiSupabase,    color: '#3FCF8E', category: 'Backend'   },
+  { name: 'Firebase',     icon: SiFirebase,    color: '#FFCA28', category: 'Backend'   },
+  { name: 'OpenAI',       icon: SiOpenai,      color: '#FFFFFF', category: 'AI'        },
+  { name: 'Docker',       icon: SiDocker,      color: '#2496ED', category: 'DevOps'    },
+  { name: 'Git',          icon: SiGit,         color: '#F05032', category: 'DevOps'    },
+  { name: 'Vercel',       icon: SiVercel,      color: '#FFFFFF', category: 'Cloud'     },
 ]
 
 function SkillCard({ name, icon: Icon, color, category }) {
@@ -114,7 +123,7 @@ export default function Skills() {
           viewport={{ once: true }} transition={{ duration: 0.6 }}
           className="mb-4"
         >
-          <MarqueeRow items={row1} direction="left" speed={30} />
+          <MarqueeRow items={row1} direction="left" speed={45} />
         </motion.div>
 
         {/* Row 2 — right to left */}
@@ -122,7 +131,7 @@ export default function Skills() {
           initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <MarqueeRow items={row2} direction="right" speed={30} />
+          <MarqueeRow items={row2} direction="right" speed={45} />
         </motion.div>
 
       </div>

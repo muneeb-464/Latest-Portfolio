@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion'
-import profilePhoto from '../assets/profile-photo 1.jpg'
+import profilePhoto from '../assets/profile-photo 2.jpeg'
 import { useState, useEffect, useRef } from 'react'
 
 const aboutText =
-  "I'm Munib Sajjad, a Senior Full-Stack Developer & Team Leader with 5+ years of experience delivering production-grade web applications. At Meta Brains I led a team of 5 developers, shipped 10+ full-stack projects, and built AI-powered systems using OpenAI APIs to automate real business workflows. Beyond development, I teach web development globally on Preply with a 5-star rating, covering React.js, Next.js, Node.js, and more. My stack spans React.js, Next.js, Node.js, Express.js, MongoDB, PostgreSQL, Firebase, Tailwind CSS, and AI tooling — always focused on clean architecture, performance, and exceptional user experience."
+  "I'm Munib Sajjad, a Full-Stack Developer (MERN) with 5+ years of experience building production web applications in React, Next.js, Node.js and TypeScript. I currently build and architect a freelance marketplace at Hunar.pk, and scaled multi-country education platforms to 500+ SEO-optimized pages at BoomerangEdu. Across four years at Meta Brains I built 40+ full-stack applications — eCommerce, AI-driven apps, booking systems and CRM dashboards — that became the foundation of courses reaching 100k+ students, and was promoted from Senior Developer to Project Manager leading a 5-member team. I also teach on Preply with a 5-star rating. My strengths are performance optimization, REST APIs, real-time features, and owning delivery end to end."
 
 const stats = [
-  { value: '5+',  label: 'Years Experience' },
-  { value: '10+', label: 'Projects Shipped'  },
-  { value: '5★',  label: 'Preply Rating'     },
+  { value: '5+',    label: 'Years Experience'  },
+  { value: '40+',   label: 'Apps Shipped'      },
+  { value: '100k+', label: 'Students Reached'  },
 ]
 
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } }
@@ -32,7 +32,7 @@ export default function About() {
             i++
             setTyped(aboutText.slice(0, i))
             if (i >= aboutText.length) clearInterval(id)
-          }, 16)
+          }, 9)
         }
       },
       { threshold: 0.3 }
@@ -81,7 +81,7 @@ export default function About() {
             </motion.h2>
 
             {/* Typing animation paragraph */}
-            <div ref={textRef} className="text-base text-gray-400 leading-[1.8] mb-12 min-h-[160px]">
+            <div ref={textRef} className="text-base text-gray-400 leading-[1.8] mb-12 min-h-[280px]">
               {typed}
               <span className="inline-block w-[2px] h-[1em] bg-ruby align-middle ml-[2px] animate-pulse" />
             </div>
@@ -118,7 +118,7 @@ export default function About() {
                   : '0 32px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06)',
               }}
             >
-              <img src={profilePhoto} alt="Abdul Basit" className="w-full h-full object-cover" />
+              <img src={profilePhoto} alt="Munib Sajjad" className="w-full h-full object-cover" />
 
               {/* White overlay — fades out on hover */}
               <div
